@@ -10,6 +10,8 @@ export class CheckboxWithLabel extends React.Component {
     this.onChange = this.onChange.bind(this);
   }
 
+
+
   onChange() {
     this.setState({isChecked: !this.state.isChecked});
   }

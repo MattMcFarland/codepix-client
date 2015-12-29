@@ -11,7 +11,7 @@ var
   compressionOptions = require('../config/gulpCompressionOptions');
 
 module.exports = function(name, dest, callback) {
-  var b = browserify({debug: false});
+  var b = browserify({debug: true});
   var filename = name + ".min.js";
 
   getNPMPackageIds().forEach(function (id) {
