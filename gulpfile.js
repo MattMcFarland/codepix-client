@@ -19,10 +19,12 @@ gulp.task('bundle', () =>
   bundlemin('src/main', 'main', 'lib/public/js')
 );
 gulp.task('bundle-dev', () =>
-  bundle('src/main', 'main', 'lib/public/js')
+  bundle('src/main', 'main.min', 'lib/public/js')
 );
 gulp.task('sass', () =>
   sass('src/style/main.scss', 'main', 'lib/public/style')
 );
 
 gulp.task('build', ['bundle-vendor', 'bundle', 'sass']);
+
+gulp.task('dev', ['bundle-dev', 'sass']);

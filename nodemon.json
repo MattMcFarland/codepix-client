@@ -7,7 +7,7 @@
     "node_modules/**/node_modules"
   ],
   "verbose": false,
-  "exec": "npm run build",
+  "exec": "gulp dev",
   "events": {
     "restart": "osascript -e 'display notification \"Rebulding due to file change:\n'$FILENAME'\" with title \"codepix-client\"'"
   },
