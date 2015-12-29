@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
+import { PasteArea } from './components';
+/**
+ * TODO:
+ *    [ ] - Paste code into container
+ *
+ */
 ReactDOM.render(
-  <div>
-    <h1>kjdflkssddsdfgh</h1>
+  <div className="container">
+    <PasteArea/>
   </div>
   , document.getElementById('main'));
