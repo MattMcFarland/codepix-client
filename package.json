@@ -1,0 +1,11 @@
+{
+  "name": "codepix-client",
+  "version": "0.0.0",
+  "description": "it bundles for the app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt McFarland",
+  "license": "MIT"
+}
