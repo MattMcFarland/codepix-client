@@ -61,7 +61,7 @@
 @mixin button-outline-variant($color) {
   color: $color;
   background-image: none;
-  background-color: transparent;
+  background-color: white;
   border-color: $color;
 
   &:focus,
