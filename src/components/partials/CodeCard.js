@@ -6,6 +6,11 @@ function highlight(txt) {
   return {__html: hljs.highlightAuto(txt).value};
 }
 
+function windowPath() {
+  return window.location.protocol + '//' +
+    window.location.host + '/';
+}
+
 export const CodeCard = ({
   id, creator, title, description, image, createdAt
   }) => (
@@ -36,13 +41,13 @@ export const CodeCard = ({
           <PastaLink
             key="0"
             label="Link"
-            value={window.location + 'code/' + id}/>
+            value={windowPath() + 'code/' + id}/>
         </li>
         <li className="list-group-item">
           <PastaLink
             key="1"
-            label="Direct"
-            value={window.location + image}/>
+            label="Image Only"
+            value={windowPath() + image}/>
         </li>
       </ul>
     </div>

@@ -3,6 +3,7 @@ import ajax from 'superagent';
 import { ProtoForm, CodeCard } from './partials';
 import { Button, Alert } from './partials/Elements';
 import { scrollTo } from '../utils';
+import { RouterContext } from 'react-router';
 
 export class Proto extends React.Component {
 
@@ -38,6 +39,8 @@ export class Proto extends React.Component {
         if (!err) {
           this.setState({value: ''});
           this.setState({newCard: res.body});
+          // this.setState({location: '/code/' + res.body.id});
+          this.props.history.pushState(null, '/code/' + res.body.id);
         }
       });
   }
