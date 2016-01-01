@@ -1,7 +1,7 @@
 import React from 'react';
 import ajax from 'superagent';
-import { ProtoForm, CodeCard } from './';
-import { Button, Alert } from './Elements';
+import { ProtoForm, CodeCard } from './partials';
+import { Button, Alert } from './partials/Elements';
 import { scrollTo } from '../utils';
 
 export class Proto extends React.Component {
