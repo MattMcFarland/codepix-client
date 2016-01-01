@@ -45,7 +45,6 @@ export const CodeCard = ({
             value={window.location + image}/>
         </li>
       </ul>
-      <button type="button" className="btn btn-default">Embed</button>
     </div>
   </div>
 );

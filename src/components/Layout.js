@@ -8,7 +8,7 @@ export class Layout extends React.Component {
         <h1>codepix.io</h1>
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/code">List</Link></li>
+          <li><Link to="/list">List</Link></li>
         </ul>
         {this.props.children}
       </div>
