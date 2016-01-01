@@ -2,8 +2,13 @@ import Tween from './Tween';
 
 module.exports = ({target}) => {
 
-
-  var duration, doc, from, to, start, timer, delta;
+  var duration;
+  var doc;
+  var from;
+  var to;
+  var start;
+  var timer;
+  var delta;
 
   if (!target) {
     return;

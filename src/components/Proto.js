@@ -3,7 +3,7 @@ import ajax from 'superagent';
 import { ProtoForm, CodeCard } from './partials';
 import { Button, Alert } from './partials/Elements';
 import { scrollTo } from '../utils';
-import { RouterContext } from 'react-router';
+
 
 export class Proto extends React.Component {
 
