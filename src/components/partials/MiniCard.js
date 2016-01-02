@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+/*
 function windowPath() {
   return window.location.protocol + '//' +
     window.location.host + '/';
 }
-
+*/
 const imgStyle = {
   maxHeight: '360px',
   overflow: 'hidden',

@@ -29,6 +29,11 @@ export class Proto extends React.Component {
 
     scrollTo({target});
   }
+
+  componentWillMount() {
+    window.ga('send', 'pageview');
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     ajax.post('/api/add')
@@ -45,7 +50,6 @@ export class Proto extends React.Component {
       });
   }
   render() {
-    window.ga('send', 'pageview');
     return (
       <section>
 
