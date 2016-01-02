@@ -8,7 +8,8 @@ function windowPath() {
 }
 */
 const imgStyle = {
-  maxHeight: '360px',
+  width: '453px',
+  maxHeight: '237px',
   overflow: 'hidden',
   display: 'inline-block',
   background: 'linear-gradient(to bottom,  ' +
@@ -19,7 +20,7 @@ const imgStyle = {
 export const MiniCard = ({
   id, image, createdAt
   }) => (
-  <div style={{ maxWidth: '500px' }}id={'minicard-' + id} className="card">
+  <div style={{ width: '503px' }}id={'minicard-' + id} className="card">
     <div className="card-block">
       <div style={imgStyle}>
         <img className="card-img-top" src={'/' + image} />
