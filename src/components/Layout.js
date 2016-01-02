@@ -5,26 +5,23 @@ export class Layout extends React.Component {
   render() {
     return (
       <div>
-        <header>
-          <img alt="codepix.io" src="/img/logo.png"/>
-        </header>
-        <nav>
-        <ul>
-          <li><Link to="/">Home (Post)</Link></li>
-          <li><Link to="/list">List</Link></li>
-          <li>Source
-          (<a href="https://github.com/MattMcFarland/codepix-client"
-               target="blank">
-              client
-            </a>) ..
-          (<a href="https://github.com/MattMcFarland/codepix-server"
-              target="blank">
-            server
-          </a>)
-          </li>
-        </ul>
+        <nav className="container-fluid navbar navbar-light bg-faded">
+          <div className="nav navbar-nav">
+            <Link
+              style={{paddingTop: '6px'}}
+              className="navbar-brand"
+              to="/"><img alt="Codepix" src="/img/brand.png"/></Link>
+            <Link
+              activeClassName='active'
+              className="nav-item nav-link"
+              to="/make">Make</Link>
+            <Link
+              activeClassName='active'
+              className="nav-item nav-link"
+              to="/list">List</Link>
+          </div>
         </nav>
-        <section>
+        <section className="container-fluid">
           {this.props.children}
         </section>
       </div>

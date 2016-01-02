@@ -5,7 +5,7 @@ import { Button, Alert } from './partials/Elements';
 import { scrollTo } from '../utils';
 
 
-export class Proto extends React.Component {
+export class Home extends React.Component {
 
   constructor() {
     super();
@@ -31,7 +31,7 @@ export class Proto extends React.Component {
   }
 
   componentWillMount() {
-    window.ga('send', 'pageview', '/make');
+    window.ga('send', 'pageview');
   }
 
   handleSubmit = (e) => {
@@ -51,29 +51,26 @@ export class Proto extends React.Component {
   }
   render() {
     return (
-      <section style={{marginTop: '30px'}} className="container-fluid">
+      <section>
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+          <h2 className="display-3">Syntax Highlighted Pics.</h2>
+          <p className="lead-1">This is an open-sourced website that
+          converts code of any language into syntax-highlighted images fit
+          for a tweet</p>
+            <p>
+            Paste your code in the <var>textarea</var> below to get started.
+            <strong>No Account required.</strong>
+            </p>
+            <ProtoForm onSubmit = {this.handleSubmit}
+                       onChange = {this.handleTextAreaChange} />
+          </div>
+        </div>
+        <div className="container-fluid">
+          <p>codepix.io converts code of any language to a syntax highlighted
+          image. This is done for free.</p>
+        </div>
 
-        {this.state.newCard ?
-          <div>
-            <Alert kind="success">
-              <p><strong>Awesome</strong> - You made a codepic.</p>
-            </Alert>
-            <Button onClick={this.handleRestart}
-                    kind="link">
-              &#8594; Do it again
-            </Button>
-            <Button onClick={this.handleShare}
-                    kind="link">
-              &#8594; Share
-            </Button>
-            <br/>
-            <CodeCard {...this.state.newCard} />
-
-            </div> :
-
-          <ProtoForm onSubmit = {this.handleSubmit}
-                     onChange = {this.handleTextAreaChange} />
-        }
 
       </section>
     );

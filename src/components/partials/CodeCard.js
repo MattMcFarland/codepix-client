@@ -1,5 +1,5 @@
 import React from 'react';
-import { PastaLink } from './Elements';
+import { PastaLink, Expander } from './Elements';
 const hljs = require('highlight.js');
 
 function highlight(txt) {
@@ -11,8 +11,12 @@ function windowPath() {
     window.location.host + '/';
 }
 
+
+
 export const CodeCard = ({
-  id, creator, title, description, image, createdAt
+  id, creator, title, description, image, createdAt,
+  isShareExpanded,
+  onShareExpandToggle
   }) => (
   <div id={'codecard-' + id} className="card">
     <div className="card-block">
@@ -36,20 +40,45 @@ export const CodeCard = ({
           {creator}
         </small>
       </p>
-      <ul id={'share-codecard-' + id} className="list-group list-group-flush">
-        <li className="list-group-item">
+      <div id={'share-codecard-' + id} className="list-group list-group-flush">
+        <Expander title="Share Options"
+                  isExpanded={isShareExpanded}
+                  onToggle={onShareExpandToggle}>
           <PastaLink
             key="0"
-            label="Link"
+            label="Share Link"
             value={windowPath() + 'code/' + id}/>
-        </li>
-        <li className="list-group-item">
           <PastaLink
             key="1"
-            label="Image Only"
+            label="Direct Link"
             value={windowPath() + image}/>
-        </li>
-      </ul>
+          <PastaLink
+            key="3"
+            label="Embend in HTML"
+            value={
+              '<blockquote class="codepix-embed">' +
+               '<a href="' + windowPath() + image + '">' +
+              windowPath() + image + '</a></blockquote>'
+              } />
+          <PastaLink
+            key="4"
+            label="BBCode"
+            value={
+              '[img]' +
+              windowPath() + image +
+              '[/img]'
+              } />
+          <PastaLink
+            key="5"
+            label="Markdown"
+            value={
+              '[codepix](' +
+              windowPath() + image +
+              ')'
+              } />
+        </Expander>
+
+      </div>
     </div>
   </div>
 );
