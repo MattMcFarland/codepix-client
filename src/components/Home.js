@@ -1,7 +1,6 @@
 import React from 'react';
 import ajax from 'superagent';
-import { ProtoForm, CodeCard } from './partials';
-import { Button, Alert } from './partials/Elements';
+import { ProtoForm } from './partials';
 import { scrollTo } from '../utils';
 
 
