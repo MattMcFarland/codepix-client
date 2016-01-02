@@ -11,7 +11,7 @@ var
   compressionOptions = require('../config/gulpCompressionOptions');
 
 module.exports = function(name, dest, callback) {
-  var b = browserify({debug: true});
+  var b = browserify({debug: false});
   var filename = name + ".min.js";
 
   getNPMPackageIds().forEach(function (id) {
@@ -22,9 +22,9 @@ module.exports = function(name, dest, callback) {
     .on('error', gutil.log)
     .pipe(source(filename))
     .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
+    // .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify(compressionOptions))
-    .pipe(sourcemaps.write('./'))
+    // .pipe(sourcemaps.write('./'))
     .on('end', () => {
       gutil.log('File Saved', gutil.colors.cyan(dest + '/' + name + '.min.js'));
     })

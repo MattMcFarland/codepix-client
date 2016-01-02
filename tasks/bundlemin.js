@@ -12,7 +12,7 @@ var
 module.exports = function(entry, name, dest, callback) {
   var b = browserify({
     entries: entry,
-    debug: true
+    debug: false
   });
   var filename = name + ".min.js";
 
@@ -24,9 +24,9 @@ module.exports = function(entry, name, dest, callback) {
     .on('error', gutil.log)
     .pipe(source(filename))
     .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
+    // .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify(compressionOptions))
-    .pipe(sourcemaps.write('./'))
+    // .pipe(sourcemaps.write('./'))
     .on('end', () => {
       gutil.log('File Saved', gutil.colors.cyan(dest + '/' + name + '.min.js'));
     })

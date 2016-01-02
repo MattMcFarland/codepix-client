@@ -45,6 +45,7 @@ export class Proto extends React.Component {
       });
   }
   render() {
+    window.ga('send', 'pageview');
     return (
       <section>
 

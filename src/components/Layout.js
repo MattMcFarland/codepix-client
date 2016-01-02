@@ -5,7 +5,10 @@ export class Layout extends React.Component {
   render() {
     return (
       <div>
-        <h1>codepix.io</h1>
+        <header>
+          <img alt="codepix.io" src="/img/logo.png"/>
+        </header>
+        <nav>
         <ul>
           <li><Link to="/">Home (Post)</Link></li>
           <li><Link to="/list">List</Link></li>
@@ -20,7 +23,10 @@ export class Layout extends React.Component {
           </a>)
           </li>
         </ul>
-        {this.props.children}
+        </nav>
+        <section>
+          {this.props.children}
+        </section>
       </div>
     );
   }

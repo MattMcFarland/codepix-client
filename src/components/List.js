@@ -17,6 +17,7 @@ export class List extends React.Component {
   }
 
   componentWillMount() {
+    window.ga('send', 'pageview');
     ajax.get('/api/list')
       .end((err, res) => {
         if (!err) {

@@ -20,6 +20,7 @@ export class Single extends React.Component {
     scrollTo({target});
   }
   componentWillMount() {
+    window.ga('send', 'pageview');
     ajax.get('/api/code/' + this.props.params.id)
       .end((err, res) => {
         if (!err) {
