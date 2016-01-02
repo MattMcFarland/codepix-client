@@ -1,5 +1,5 @@
 import React from 'react';
-import { PastaLink } from './Elements';
+
 
 function windowPath() {
   return window.location.protocol + '//' +

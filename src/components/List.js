@@ -33,7 +33,7 @@ export class List extends React.Component {
       <div>
         {this.state.data ?
           <ul>
-            {this.state.data.map(function(item) {
+            {this.state.data.map(function (item) {
               return <ListItem key={item.id} data={item}/>;
             })}
           </ul> :
