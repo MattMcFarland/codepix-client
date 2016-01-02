@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router';
 
 function windowPath() {
   return window.location.protocol + '//' +
@@ -29,10 +29,9 @@ export const MiniCard = ({
         </small>
       </p>
       <p className="card-actions">
-        <a href={windowPath() + 'code/' + id}
-           className="btn btn-primary-outline">
-          Detail View...
-        </a>
+        <Link to={'/code/' + id}>
+          (...more)
+        </Link>
       </p>
     </div>
   </div>
