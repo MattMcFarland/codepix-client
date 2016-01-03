@@ -4,9 +4,9 @@ import { MiniCard } from './partials';
 
 
 const ListItem = ({data}) => (
-  <li>
+  <div>
     <MiniCard {...data} />
-  </li>
+  </div>
 );
 
 export class List extends React.Component {
@@ -33,11 +33,11 @@ export class List extends React.Component {
     return (
       <div>
         {this.state.data ?
-          <ul style={{listStyleType: 'none'}}>
+          <section className="container" style={{listStyleType: 'none'}}>
             {this.state.data.map(function (item) {
               return <ListItem key={item.id} data={item}/>;
             })}
-          </ul> :
+          </section> :
           <p>Loading Data...</p>}
       </div>
     );
