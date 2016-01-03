@@ -9,7 +9,8 @@ export class Single extends React.Component {
   constructor() {
     super();
     this.state = {
-      isShareExpanded: localStorage.getItem('isShareExpanded')
+      isShareExpanded: localStorage.getItem('isShareExpanded') || false,
+      tab: localStorage.getItem('tab') || 'image'
     };
   }
   handleShareToggle = () => {
@@ -26,6 +27,14 @@ export class Single extends React.Component {
       'share-codecard-' + this.state.card.id);
     this.setState({isShareExpanded: true});
     scrollTo({target});
+  }
+  handleImageTabClick = () => {
+    localStorage.setItem('tab', 'image');
+    this.setState({tab: 'image'});
+  }
+  handleCodeTabClick = () => {
+    localStorage.setItem('tab', 'code');
+    this.setState({tab: 'code'});
   }
   componentWillMount() {
     window.ga('send', 'pageview', window.location.pathname);
@@ -54,6 +63,9 @@ export class Single extends React.Component {
             <CodeCard
               onShareExpandToggle={this.handleShareToggle}
               isShareExpanded={this.state.isShareExpanded}
+              onImageTabClick={this.handleImageTabClick}
+              onCodeTabClick={this.handleCodeTabClick}
+              tab={this.state.tab}
               {...this.state.card} />
           </div> :
           <p>Loading Data...</p>}

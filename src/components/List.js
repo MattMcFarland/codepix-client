@@ -33,7 +33,7 @@ export class List extends React.Component {
     return (
       <div>
         {this.state.data ?
-          <ul>
+          <ul style={{listStyleType: 'none'}}>
             {this.state.data.map(function (item) {
               return <ListItem key={item.id} data={item}/>;
             })}
