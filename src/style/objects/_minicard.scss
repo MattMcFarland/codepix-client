@@ -1,0 +1,54 @@
+.minicard {
+  header {
+    img {
+      border-radius: 4px;
+      margin-right: 14px;
+    }
+  }
+  .body {
+    margin-left: 16px;
+    padding-top: 0;
+  }
+  max-width: 584px;
+  margin: 15px auto;
+}
+
+@media (max-width: 780px) {
+  .minicard {
+    header {
+      img {
+        border-radius: 4px;
+        margin-right: 14px;
+      }
+    }
+    .card-img-top {
+      width: 100%;
+    }
+    .body {
+      margin: 0;
+    }
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .minicard {
+    header {
+      img {
+        border-radius: 4px;
+        margin-right: 14px;
+      }
+    }
+    .body {
+      margin: 0;
+    }
+    max-width: 100%;
+    margin: 0;
+    .card-block {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

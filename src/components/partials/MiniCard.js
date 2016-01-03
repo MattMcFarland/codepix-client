@@ -9,30 +9,21 @@ function windowPath() {
 }
 */
 const imgStyle = {
-  width: '506px',
+  width: '100%',
   maxHeight: '254px',
-  overflow: 'hidden',
-  display: 'inline-block',
-  background: 'linear-gradient(to bottom,  ' +
-              'rgba(255,255,255,0) 0%,rgba(255,255,255,0) ' +
-              '80%,rgba(255,255, 255,1) 100%)'
+  overflow: 'hidden'
 };
 
 export const MiniCard = ({
   id, image, createdAt
   }) => (
-  <div style={{ width: '584px', margin: '15px auto' }}
-       id={'minicard-' + id} className="card smalltext">
+  <div className="card minicard smalltext" id={'minicard-' + id} >
     <div className="card-block">
       <header>
-        <img style={{
-              borderRadius: '4px',
-              marginRight: '14px'
-             }}
-             src="/favicon-32x32.png"/>
+        <img src="/favicon-32x32.png"/>
         <strong>{moment(createdAt).fromNow()}</strong>
       </header>
-      <div style={{marginLeft: '16px', paddingTop: '0'}}className="card-block">
+      <div className="body" className="card-block">
       <div style={imgStyle}>
         <Link className="text-muted" to={'/code/' + id}>
           <img className="card-img-top" src={'/' + image} />
