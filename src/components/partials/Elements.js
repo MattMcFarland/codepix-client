@@ -46,24 +46,45 @@ export const PastaLink = ({
 const Title = ({
   children
 }) => (
-  <h5>
+  <strong>
     {children}
-  </h5>
+  </strong>
+);
+
+
+export const Radio = ({
+  name,
+  value,
+  children,
+  onChange,
+  set
+}) => (
+  <label className="radio-inline">
+  <input
+    onChange = {onChange}
+    checked = {set === value}
+    type = 'radio'
+    name = {name}
+    id = {name}
+    value = {value} />
+    {children}
+  </label>
 );
 
 export const Expander = ({
-  isExpanded,
+  isExpanded = false,
   title,
   children,
   onToggle
 }) => (
-  <div>
+  <span>
     <Title>
-      {title}
-      <Button kind="link" onClick={onToggle}>
+      <Button kind="link btn-sm" onClick={onToggle}>
+        {title}
+        &nbsp;
         <Icon name={isExpanded ? 'caret-down' : 'caret-right'}/>
       </Button>
     </Title>
     {isExpanded ? children : ''}
-  </div>
+  </span>
 );

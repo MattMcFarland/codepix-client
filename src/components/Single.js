@@ -14,7 +14,6 @@ export class Single extends React.Component {
     };
   }
   handleShareToggle = () => {
-    console.log('handleShareToggle');
     let newSetting = !this.state.isShareExpanded;
     localStorage.setItem('isShareExpanded', newSetting);
     this.setState({isShareExpanded: newSetting});

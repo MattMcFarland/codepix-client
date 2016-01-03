@@ -1,0 +1,666 @@
+[
+  {
+    "value": "auto",
+    "label": "Auto Detect"
+  },
+  {
+    "value": "apache",
+    "label": "Apache"
+  },
+  {
+    "value": "bash",
+    "label": "Bash"
+  },
+  {
+    "value": "c#",
+    "label": "C#"
+  },
+  {
+    "value": "c++",
+    "label": "C++"
+  },
+  {
+    "value": "css",
+    "label": "CSS"
+  },
+  {
+    "value": "caché",
+    "label": "Caché"
+  },
+  {
+    "value": "object",
+    "label": "Object"
+  },
+  {
+    "value": "script",
+    "label": "Script"
+  },
+  {
+    "value": "coffeescript",
+    "label": "CoffeeScript"
+  },
+  {
+    "value": "diff",
+    "label": "Diff"
+  },
+  {
+    "value": "html,",
+    "label": "HTML,"
+  },
+  {
+    "value": "xml",
+    "label": "XML"
+  },
+  {
+    "value": "http",
+    "label": "HTTP"
+  },
+  {
+    "value": "ini",
+    "label": "Ini"
+  },
+  {
+    "value": "json",
+    "label": "JSON"
+  },
+  {
+    "value": "java",
+    "label": "Java"
+  },
+  {
+    "value": "javascript",
+    "label": "JavaScript"
+  },
+  {
+    "value": "makefile",
+    "label": "Makefile"
+  },
+  {
+    "value": "markdown",
+    "label": "Markdown"
+  },
+  {
+    "value": "nginx",
+    "label": "Nginx"
+  },
+  {
+    "value": "objective",
+    "label": "Objective"
+  },
+  {
+    "value": "c",
+    "label": "C"
+  },
+  {
+    "value": "php",
+    "label": "PHP"
+  },
+  {
+    "value": "perl",
+    "label": "Perl"
+  },
+  {
+    "value": "python",
+    "label": "Python"
+  },
+  {
+    "value": "ruby",
+    "label": "Ruby"
+  },
+  {
+    "value": "sql",
+    "label": "SQL"
+  },
+  {
+    "value": "1c",
+    "label": "1C"
+  },
+  {
+    "value": "arm",
+    "label": "ARM"
+  },
+  {
+    "value": "assembly",
+    "label": "Assembly"
+  },
+  {
+    "value": "avr",
+    "label": "AVR"
+  },
+  {
+    "value": "assembler",
+    "label": "Assembler"
+  },
+  {
+    "value": "access",
+    "label": "Access"
+  },
+  {
+    "value": "log",
+    "label": "log"
+  },
+  {
+    "value": "actionscript",
+    "label": "ActionScript"
+  },
+  {
+    "value": "applescript",
+    "label": "AppleScript"
+  },
+  {
+    "value": "asciidoc",
+    "label": "AsciiDoc"
+  },
+  {
+    "value": "aspectj",
+    "label": "AspectJ"
+  },
+  {
+    "value": "autohotkey",
+    "label": "AutoHotkey"
+  },
+  {
+    "value": "autoit",
+    "label": "AutoIt"
+  },
+  {
+    "value": "axapta",
+    "label": "Axapta"
+  },
+  {
+    "value": "brainfuck",
+    "label": "Brainfuck"
+  },
+  {
+    "value": "c/al",
+    "label": "C/AL"
+  },
+  {
+    "value": "cmake",
+    "label": "CMake"
+  },
+  {
+    "value": "cap’n",
+    "label": "Cap’n"
+  },
+  {
+    "value": "proto",
+    "label": "Proto"
+  },
+  {
+    "value": "ceylon",
+    "label": "Ceylon"
+  },
+  {
+    "value": "clojure",
+    "label": "Clojure"
+  },
+  {
+    "value": "repl",
+    "label": "REPL"
+  },
+  {
+    "value": "crystal",
+    "label": "Crystal"
+  },
+  {
+    "value": "d",
+    "label": "D"
+  },
+  {
+    "value": "dns",
+    "label": "DNS"
+  },
+  {
+    "value": "zone",
+    "label": "Zone"
+  },
+  {
+    "value": "file",
+    "label": "file"
+  },
+  {
+    "value": "dos",
+    "label": "DOS"
+  },
+  {
+    "value": ".bat",
+    "label": ".bat"
+  },
+  {
+    "value": "dart",
+    "label": "Dart"
+  },
+  {
+    "value": "delphi",
+    "label": "Delphi"
+  },
+  {
+    "value": "django",
+    "label": "Django"
+  },
+  {
+    "value": "dockerfile",
+    "label": "Dockerfile"
+  },
+  {
+    "value": "dust",
+    "label": "Dust"
+  },
+  {
+    "value": "erb",
+    "label": "ERB"
+  },
+  {
+    "value": "(embedded",
+    "label": "(Embedded"
+  },
+  {
+    "value": "ruby)",
+    "label": "Ruby)"
+  },
+  {
+    "value": "elixir",
+    "label": "Elixir"
+  },
+  {
+    "value": "elm",
+    "label": "Elm"
+  },
+  {
+    "value": "erlang",
+    "label": "Erlang"
+  },
+  {
+    "value": "f#",
+    "label": "F#"
+  },
+  {
+    "value": "fix",
+    "label": "FIX"
+  },
+  {
+    "value": "fortran",
+    "label": "Fortran"
+  },
+  {
+    "value": "g-code",
+    "label": "G-code"
+  },
+  {
+    "value": "(iso",
+    "label": "(ISO"
+  },
+  {
+    "value": "6983)",
+    "label": "6983)"
+  },
+  {
+    "value": "gams",
+    "label": "GAMS"
+  },
+  {
+    "value": "glsl",
+    "label": "GLSL"
+  },
+  {
+    "value": "gherkin",
+    "label": "Gherkin"
+  },
+  {
+    "value": "go",
+    "label": "Go"
+  },
+  {
+    "value": "golo",
+    "label": "Golo"
+  },
+  {
+    "value": "gradle",
+    "label": "Gradle"
+  },
+  {
+    "value": "groovy",
+    "label": "Groovy"
+  },
+  {
+    "value": "hsp",
+    "label": "HSP"
+  },
+  {
+    "value": "haml",
+    "label": "Haml"
+  },
+  {
+    "value": "handlebars",
+    "label": "Handlebars"
+  },
+  {
+    "value": "haskell",
+    "label": "Haskell"
+  },
+  {
+    "value": "haxe",
+    "label": "Haxe"
+  },
+  {
+    "value": "irpf90",
+    "label": "IRPF90"
+  },
+  {
+    "value": "inform",
+    "label": "Inform"
+  },
+  {
+    "value": "7",
+    "label": "7"
+  },
+  {
+    "value": "intel",
+    "label": "Intel"
+  },
+  {
+    "value": "x86",
+    "label": "x86"
+  },
+  {
+    "value": "julia",
+    "label": "Julia"
+  },
+  {
+    "value": "kotlin",
+    "label": "Kotlin"
+  },
+  {
+    "value": "lasso",
+    "label": "Lasso"
+  },
+  {
+    "value": "less",
+    "label": "Less"
+  },
+  {
+    "value": "lisp",
+    "label": "Lisp"
+  },
+  {
+    "value": "livecode",
+    "label": "LiveCode"
+  },
+  {
+    "value": "livescript",
+    "label": "LiveScript"
+  },
+  {
+    "value": "lua",
+    "label": "Lua"
+  },
+  {
+    "value": "mel",
+    "label": "MEL"
+  },
+  {
+    "value": "mips",
+    "label": "MIPS"
+  },
+  {
+    "value": "mathematica",
+    "label": "Mathematica"
+  },
+  {
+    "value": "matlab",
+    "label": "Matlab"
+  },
+  {
+    "value": "mercury",
+    "label": "Mercury"
+  },
+  {
+    "value": "mizar",
+    "label": "Mizar"
+  },
+  {
+    "value": "mojolicious",
+    "label": "Mojolicious"
+  },
+  {
+    "value": "monkey",
+    "label": "Monkey"
+  },
+  {
+    "value": "nsis",
+    "label": "NSIS"
+  },
+  {
+    "value": "nimrod",
+    "label": "Nimrod"
+  },
+  {
+    "value": "nix",
+    "label": "Nix"
+  },
+  {
+    "value": "ocaml",
+    "label": "OCaml"
+  },
+  {
+    "value": "openscad",
+    "label": "OpenSCAD"
+  },
+  {
+    "value": "oracle",
+    "label": "Oracle"
+  },
+  {
+    "value": "rules",
+    "label": "Rules"
+  },
+  {
+    "value": "language",
+    "label": "Language"
+  },
+  {
+    "value": "oxygene",
+    "label": "Oxygene"
+  },
+  {
+    "value": "parser3",
+    "label": "Parser3"
+  },
+  {
+    "value": "powershell",
+    "label": "PowerShell"
+  },
+  {
+    "value": "processing",
+    "label": "Processing"
+  },
+  {
+    "value": "prolog",
+    "label": "Prolog"
+  },
+  {
+    "value": "protocol",
+    "label": "Protocol"
+  },
+  {
+    "value": "buffers",
+    "label": "Buffers"
+  },
+  {
+    "value": "puppet",
+    "label": "Puppet"
+  },
+  {
+    "value": "profile",
+    "label": "profile"
+  },
+  {
+    "value": "q",
+    "label": "Q"
+  },
+  {
+    "value": "r",
+    "label": "R"
+  },
+  {
+    "value": "renderman",
+    "label": "RenderMan"
+  },
+  {
+    "value": "rib",
+    "label": "RIB"
+  },
+  {
+    "value": "rsl",
+    "label": "RSL"
+  },
+  {
+    "value": "roboconf",
+    "label": "Roboconf"
+  },
+  {
+    "value": "rust",
+    "label": "Rust"
+  },
+  {
+    "value": "scss",
+    "label": "SCSS"
+  },
+  {
+    "value": "sml",
+    "label": "SML"
+  },
+  {
+    "value": "sqf",
+    "label": "SQF"
+  },
+  {
+    "value": "step",
+    "label": "STEP"
+  },
+  {
+    "value": "part",
+    "label": "Part"
+  },
+  {
+    "value": "21",
+    "label": "21"
+  },
+  {
+    "value": "10303-21)",
+    "label": "10303-21)"
+  },
+  {
+    "value": "scala",
+    "label": "Scala"
+  },
+  {
+    "value": "scheme",
+    "label": "Scheme"
+  },
+  {
+    "value": "scilab",
+    "label": "Scilab"
+  },
+  {
+    "value": "smali",
+    "label": "Smali"
+  },
+  {
+    "value": "smalltalk",
+    "label": "Smalltalk"
+  },
+  {
+    "value": "stata",
+    "label": "Stata"
+  },
+  {
+    "value": "stylus",
+    "label": "Stylus"
+  },
+  {
+    "value": "swift",
+    "label": "Swift"
+  },
+  {
+    "value": "tp",
+    "label": "TP"
+  },
+  {
+    "value": "tcl",
+    "label": "Tcl"
+  },
+  {
+    "value": "tex",
+    "label": "TeX"
+  },
+  {
+    "value": "thrift",
+    "label": "Thrift"
+  },
+  {
+    "value": "twig",
+    "label": "Twig"
+  },
+  {
+    "value": "typescript",
+    "label": "TypeScript"
+  },
+  {
+    "value": "vb.net",
+    "label": "VB.NET"
+  },
+  {
+    "value": "vbscript",
+    "label": "VBScript"
+  },
+  {
+    "value": "in",
+    "label": "in"
+  },
+  {
+    "value": "html",
+    "label": "HTML"
+  },
+  {
+    "value": "vhdl",
+    "label": "VHDL"
+  },
+  {
+    "value": "vala",
+    "label": "Vala"
+  },
+  {
+    "value": "verilog",
+    "label": "Verilog"
+  },
+  {
+    "value": "vim",
+    "label": "Vim"
+  },
+  {
+    "value": "xl",
+    "label": "XL"
+  },
+  {
+    "value": "xquery",
+    "label": "XQuery"
+  },
+  {
+    "value": "yaml",
+    "label": "YAML"
+  },
+  {
+    "value": "zephir",
+    "label": "Zephir"
+  },
+  {
+    "value": "crmsh",
+    "label": "crmsh"
+  },
+  {
+    "value": "pf",
+    "label": "pf"
+  }
+]
