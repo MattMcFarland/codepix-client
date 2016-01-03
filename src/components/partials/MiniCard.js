@@ -23,7 +23,7 @@ export const MiniCard = ({
         <img src="/favicon-32x32.png"/>
         <strong>{moment(createdAt).fromNow()}</strong>
       </header>
-      <div className="body" className="card-block">
+      <div className="body card-block">
       <div style={imgStyle}>
         <Link className="text-muted" to={'/code/' + id}>
           <img className="card-img-top" src={'/' + image} />
