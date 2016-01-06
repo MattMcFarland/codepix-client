@@ -48,15 +48,19 @@
   "author": "Matt McFarland",
   "license": "MIT",
   "dependencies": {
+    "alt": "0.17.9",
     "classnames": "^2.2.1",
     "highlight.js": "^9.0.0",
     "history": "^1.17.0",
     "moment": "^2.11.0",
     "react": "^0.14.3",
+    "react-bootstrap": "^0.28.1",
     "react-dom": "^0.14.3",
     "react-input-autosize": "^0.6.6",
+    "react-notification-system": "^0.2.6",
     "react-router": "^1.0.3",
     "react-select": "^0.9.1",
-    "superagent": "^1.6.1"
+    "superagent": "^1.6.1",
+    "validator": "^4.5.0"
   }
 }

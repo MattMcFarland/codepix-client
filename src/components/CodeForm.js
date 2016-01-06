@@ -124,13 +124,14 @@ export class CodeForm extends React.Component {
       ajax.post('/api/add')
         .send({
           title: this.state.titleValue,
-          description: this.state.descriptionValue,
+          content: this.state.descriptionValue,
           language: this.state.codeLang,
           visibility: this.state.visibility,
           code: this.state.textAreaValue
         })
         .set('Content-Type', 'application/json')
         .set('Accept', 'application/json')
+        .set('X-no-legacy')
         .end((err, res) => {
           if (!err) {
             this.clearLocalStorage();

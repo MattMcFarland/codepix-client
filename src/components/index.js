@@ -5,3 +5,4 @@ export { Home } from './Home';
 export { Proto } from './Proto';
 export { Single } from './Single';
 export { CodeForm } from './CodeForm';
+export { SignupForm } from './SignupForm';

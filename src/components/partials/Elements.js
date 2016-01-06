@@ -1,4 +1,5 @@
 import React from 'react';
+import { Collapse } from 'react-bootstrap';
 
 export const Button = ({
   children,
@@ -85,6 +86,10 @@ export const Expander = ({
         <Icon name={isExpanded ? 'caret-down' : 'caret-right'}/>
       </Button>
     </Title>
-    {isExpanded ? children : ''}
+    <Collapse in={isExpanded}>
+      <div>
+        {children}
+      </div>
+    </Collapse>
   </span>
 );
