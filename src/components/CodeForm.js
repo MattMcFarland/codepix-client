@@ -195,9 +195,9 @@ export class CodeForm extends React.Component {
                            set={visibility} onChange={handleVisibilityChange}>
                       Public
                     </Radio>
-                    <Radio name="visibility" value="private"
+                    <Radio disabled name="visibility" value="private"
                            set={visibility} onChange={handleVisibilityChange}>
-                      Private
+                      Private (soon)
                     </Radio>
                   </fieldset>
                   <fieldset className="form-group">

@@ -33,8 +33,11 @@ export const MiniCard = ({
                src={author.avatar} /> :
             <img src="/favicon-32x32.png"/>}
 
-        <strong>{author ? author.username : ''}</strong>
-        <strong>{moment(dateCreated).fromNow()}</strong>
+        <strong
+          style={{marginTop: '-1em'}}>
+          {author ? author.username : ''}
+        </strong>
+       <p style={{marginLeft: '46px'}}> {moment(dateCreated).fromNow()}</p>
 
       </header>
       <div className="body panel-body">
@@ -51,7 +54,7 @@ export const MiniCard = ({
             {title}
           </p>
           <p>
-            {description}
+            <small>{description}</small>
           </p>
           <p className="card-actions">
             <Link rel="canonical" className="text-muted" to={shareUrl}>

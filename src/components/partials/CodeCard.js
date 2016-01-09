@@ -1,6 +1,7 @@
 import React from 'react';
 import { PastaLink, Expander, Icon } from './Elements';
 const hljs = require('highlight.js');
+import moment from 'moment';
 
 function highlight(txt) {
   return {__html: hljs.highlightAuto(txt).value};
@@ -8,7 +9,14 @@ function highlight(txt) {
 
 
 export const CodeCard = ({
-  shasum, author, title, description, content, imageUrl, shareUrl, createdAt,
+  shasum,
+  author,
+  title,
+  description,
+  content,
+  imageUrl,
+  shareUrl,
+  dateCreated,
   isShareExpanded,
   onShareExpandToggle,
   onImageTabClick,
@@ -22,14 +30,14 @@ export const CodeCard = ({
           <li className={'nav-link' + (tab === 'image' ? ' active' : '')}>
             <a href="#"
                className={'nav-link' + (tab === 'image' ? ' active' : '')}
-               onClick={onImageTabClick} >
+               onClick={onImageTabClick}>
               <Icon name='image'/>
             </a>
           </li>
           <li className={'nav-link' + (tab === 'code' ? ' active' : '')}>
             <a href="#"
                className={'nav-link' + (tab === 'code' ? ' active' : '')}
-               onClick={onCodeTabClick} >
+               onClick={onCodeTabClick}>
               <Icon name='code'/>
             </a>
           </li>
@@ -48,17 +56,20 @@ export const CodeCard = ({
         </pre>
       </div>
       </div>
+      {author && author.avatar ?
+        <img style={{width: '32px', height: '32px'}}
+             src={author.avatar} /> :
+        <img src="/favicon-32x32.png"/>}
+
+      <strong
+        style={{marginTop: '-1em'}}>
+        {author ? author.username : ''}
+      </strong>
+      <p style={{marginLeft: '46px'}}> {moment(dateCreated).fromNow()}</p>
       <p className='card-text'>
-        <small>{title}</small>
-        {description}
-      </p>
-      <p className='card-text'>
-        <small className='text-muted'>
-          {createdAt}
-        </small>
-        <small className='text-muted'>
-          {author}
-        </small>
+
+       <h5>{title}</h5>
+      <small>{description}</small>
       </p>
       <div id={'share-codecard-' + shasum}
            className='list-group list-group-flush'>
