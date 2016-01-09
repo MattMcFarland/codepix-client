@@ -1,45 +1,49 @@
 import React from 'react';
-import ajax from 'superagent';
 import { MiniCard } from './partials';
+import Relay from 'react-relay';
 
 
-const ListItem = ({data}) => (
-  <div>
-    <MiniCard {...data} />
-  </div>
-);
+class ListComponent extends React.Component {
 
-export class List extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  componentWillMount() {
-    window.ga('send', 'pageview', '/list');
-    ajax.get('/api/list')
-      .end((err, res) => {
-        if (!err) {
-          let data = res.body.sort((a, b) => {
-            return a.createdAt > b.createdAt ? -1 : 1;
-          });
-          this.setState({data});
-        }
-      });
+  renderList = () => {
+    return this.props.cards.cards.edges.map(edge =>
+      <MiniCard key={edge.node.id} {...edge.node} />
+    );
   }
 
   render() {
+    console.log(this.props.cards.cards.edges);
     return (
-      <div>
-        {this.state.data ?
-          <section className="container" style={{listStyleType: 'none'}}>
-            {this.state.data.map(function (item) {
-              return <ListItem key={item.id} data={item}/>;
-            })}
-          </section> :
-          <p>Loading Data...</p>}
-      </div>
+      <div>{this.renderList()}</div>
     );
   }
 }
+
+
+
+export const List = Relay.createContainer(ListComponent, {
+  fragments: {
+    cards: () => Relay.QL`
+      fragment on CodePixAPI {
+        cards(first: 10) {
+          edges {
+            node {
+              id,
+              title,
+              description,
+              dateCreated,
+              imageUrl,
+              shareUrl,
+              shasum,
+              author {
+                id,
+                username
+              }
+            }
+          }
+        }
+      }
+    `
+  }
+});

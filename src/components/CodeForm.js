@@ -136,7 +136,7 @@ export class CodeForm extends React.Component {
           if (!err) {
             this.clearLocalStorage();
             this.clearState();
-            this.props.history.pushState(null, '/code/' + res.body.id);
+            this.props.history.pushState(null, '/code/' + res.body.shasum);
           }
         });
     }

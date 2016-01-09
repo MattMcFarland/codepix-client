@@ -15,28 +15,46 @@ const imgStyle = {
 };
 
 export const MiniCard = ({
-  id, image, createdAt
+  dateCreated,
+  id,
+  title,
+  description,
+  // imageUrl,
+  shareUrl,
+  shasum,
+  author
   }) => (
-  <div className="card minicard smalltext" id={'minicard-' + id} >
-    <div className="card-block">
+  <div className="panel minicard smalltext" id={'minicard-' + id} >
+    <div className="panel-body">
       <header>
-        <img src="/favicon-32x32.png"/>
-        <strong>{moment(createdAt).fromNow()}</strong>
+
+        {author && author.avatar ?
+          <img style={{width: '32px', height: '32px'}}
+               src={author.avatar} /> :
+            <img src="/favicon-32x32.png"/>}
+
+        <strong>{author ? author.username : ''}</strong>
+        <strong>{moment(dateCreated).fromNow()}</strong>
+
       </header>
-      <div className="body card-block">
+      <div className="body panel-body">
       <div style={imgStyle}>
-        <Link className="text-muted" to={'/code/' + id}>
-          <img className="card-img-top" src={'/' + image} />
+
+        <Link className="text-muted" to={'/code/' + shasum}>
+          <img
+            className="card-img-top"
+            src={'/c0dez/data/' + shasum + '.png'} />
         </Link>
       </div>
-        <div className="card-block">
+        <div className="panel-body">
           <p className="card-text">
-            <small className="text-muted">
-              {createdAt}
-            </small>
+            {title}
+          </p>
+          <p>
+            {description}
           </p>
           <p className="card-actions">
-            <Link className="text-muted" to={'/code/' + id}>
+            <Link rel="canonical" className="text-muted" to={shareUrl}>
               (...more)
             </Link>
           </p>

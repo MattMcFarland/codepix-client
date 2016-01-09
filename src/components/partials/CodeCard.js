@@ -6,32 +6,27 @@ function highlight(txt) {
   return {__html: hljs.highlightAuto(txt).value};
 }
 
-function windowPath() {
-  return window.location.protocol + '//' +
-    window.location.host + '/';
-}
-
-
 
 export const CodeCard = ({
-  id, creator, title, description, image, createdAt,
+  shasum, author, title, description, content, imageUrl, shareUrl, createdAt,
   isShareExpanded,
   onShareExpandToggle,
   onImageTabClick,
   onCodeTabClick,
   tab = 'image'
   }) => (
-  <div id={'codecard-' + id} className='card'>
+  <div id={'codecard-' + shasum} className='card'>
+
     <header className='card-block'>
         <ul className="nav nav-tabs">
-          <li className="nav-item">
+          <li className={'nav-link' + (tab === 'image' ? ' active' : '')}>
             <a href="#"
                className={'nav-link' + (tab === 'image' ? ' active' : '')}
                onClick={onImageTabClick} >
               <Icon name='image'/>
             </a>
           </li>
-          <li className="nav-item">
+          <li className={'nav-link' + (tab === 'code' ? ' active' : '')}>
             <a href="#"
                className={'nav-link' + (tab === 'code' ? ' active' : '')}
                onClick={onCodeTabClick} >
@@ -42,54 +37,56 @@ export const CodeCard = ({
     </header>
     <div style={{paddingTop: '0'}} className='card-block'>
       <div style={{display: tab === 'image' ? 'block' : 'none'}}>
-      <img className='card-img-top' src={'/' + image} />
+      <img className='card-img-top' src={'/c0dez/data/' + shasum + '.png'} />
       </div>
       <div style={{display: tab === 'code' ? 'block' : 'none'}}>
       <div className='card-text'>
         <pre>
           <code>
-            <div dangerouslySetInnerHTML={highlight(description)}/>
+            <div dangerouslySetInnerHTML={highlight(content)}/>
           </code>
         </pre>
       </div>
       </div>
       <p className='card-text'>
         <small>{title}</small>
+        {description}
       </p>
       <p className='card-text'>
         <small className='text-muted'>
           {createdAt}
         </small>
         <small className='text-muted'>
-          {creator}
+          {author}
         </small>
       </p>
-      <div id={'share-codecard-' + id} className='list-group list-group-flush'>
+      <div id={'share-codecard-' + shasum}
+           className='list-group list-group-flush'>
         <Expander title='Share Options'
                   isExpanded={isShareExpanded}
                   onToggle={onShareExpandToggle}>
           <PastaLink
             key='0'
             label='Share Link'
-            value={windowPath() + 'code/' + id}/>
+            value={shareUrl}/>
           <PastaLink
             key='1'
             label='Direct Link'
-            value={windowPath() + image}/>
+            value={imageUrl}/>
           <PastaLink
             key='3'
             label='Embend in HTML'
             value={
               '<blockquote class="codepix-embed">' +
-               '<a href="' + windowPath() + image + '">' +
-              windowPath() + image + '</a></blockquote>'
+               '<a href="' + shareUrl + '">' +
+              imageUrl + '</a></blockquote>'
               } />
           <PastaLink
             key='4'
             label='BBCode'
             value={
               '[img]' +
-              windowPath() + image +
+              imageUrl +
               '[/img]'
               } />
           <PastaLink
@@ -97,7 +94,7 @@ export const CodeCard = ({
             label='Markdown'
             value={
               '[codepix](' +
-              windowPath() + image +
+              imageUrl +
               ')'
               } />
         </Expander>

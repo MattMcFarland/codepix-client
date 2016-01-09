@@ -19,6 +19,11 @@
       "babelify"
     ]
   },
+  "metadata": {
+    "graphql": {
+      "schema": "./data/schema.json"
+    }
+  },
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-cli": "^6.3.17",
@@ -29,6 +34,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
+    "babel-relay-plugin-loader": "^0.6.1",
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
     "eslint": "^1.10.3",
@@ -49,6 +55,7 @@
   "license": "MIT",
   "dependencies": {
     "alt": "0.17.9",
+    "babel-relay-plugin": "^0.6.3",
     "classnames": "^2.2.1",
     "highlight.js": "^9.0.0",
     "history": "^1.17.0",
@@ -58,7 +65,9 @@
     "react-dom": "^0.14.3",
     "react-input-autosize": "^0.6.6",
     "react-notification-system": "^0.2.6",
-    "react-router": "^1.0.3",
+    "react-relay": "^0.6.1",
+    "react-router": "^2.0.0-rc4",
+    "react-router-relay": "^0.9.0",
     "react-select": "^0.9.1",
     "superagent": "^1.6.1",
     "validator": "^4.5.0"

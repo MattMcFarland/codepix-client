@@ -4,7 +4,7 @@
 
 
 // Base class
-.panel {
+.panel, .card {
   margin-bottom: $line-height-computed;
   background-color: $panel-bg;
   border: 1px solid transparent;
@@ -13,7 +13,7 @@
 }
 
 // Panel contents
-.panel-body {
+.panel-body, .card-block {
   padding: $panel-body-padding;
   @include clearfix;
 }
@@ -59,7 +59,7 @@
 // By default, space out list group content from panel headings to account for
 // any kind of custom content between the two.
 
-.panel {
+.panel, .card {
   > .list-group,
   > .panel-collapse > .list-group {
     margin-bottom: 0;
@@ -106,7 +106,7 @@
 // Place a non-bordered `.table` within a panel (not within a `.panel-body`) and
 // watch it go full width.
 
-.panel {
+.panel, .card {
   > .table,
   > .table-responsive > .table,
   > .panel-collapse > .table {

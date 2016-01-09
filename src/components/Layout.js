@@ -7,7 +7,7 @@ import {
   Modal,
   Button,
   NavDropdown
-  } from 'react-bootstrap';
+} from 'react-bootstrap';
 import { SignupForm, LoginForm } from './';
 import { AppActions } from '../actions/AppActions';
 import { AppStore } from '../stores/AppStore';
@@ -51,58 +51,64 @@ export class Layout extends React.Component {
     let onShowLoginForm = () => (AppActions.showLoginModal());
     let onHideSignupForm = () => (AppActions.hideSignupModal());
     let onHideLoginForm = () => (AppActions.hideLoginModal());
+    let logout = (e) => {
+      e.preventDefault();
+      AppActions.logout();
+    };
     if (this.state.user) {
       Menu = ({}) => (
-        <NavDropdown eventKey={3} title="User" id="user-dropdown">
-          <MenuItem eventKey={3.1}>Dashboard</MenuItem>
-          <MenuItem eventKey={3.2}>Notifications</MenuItem>
-          <MenuItem divider />
-          <MenuItem eventKey={3.3}>Logout</MenuItem>
-        </NavDropdown>
+        <Nav pullRight style={{marginTop: '5px'}}>
+
+            <NavDropdown eventKey={3} title="User" id="user-dropdown">
+              <MenuItem eventKey={3.1}>Dashboard</MenuItem>
+              <MenuItem divider />
+              <MenuItem onClick={logout} eventKey={3.2}>Logout</MenuItem>
+            </NavDropdown>
+
+
+        </Nav>
       );
 
 
     } else {
       Menu = ({}) => (
-        <Nav>
-          <Button bsStyle='link' onClick={onShowSignupForm}>Signup</Button>
-          <Button bsStyle='link' onClick={onShowLoginForm}>Login</Button>
+        <Nav pullRight style={{marginTop: '5px'}}>
+            <Button bsStyle='link' onClick={onShowSignupForm}>Signup</Button>
+            <Button bsStyle='link' onClick={onShowLoginForm}>Login</Button>
         </Nav>
       );
     }
 
     return (
       <section>
-      <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Link
-              style={{paddingTop: '18px'}}
-              to="/"><img alt="Codepix" src="/img/brand.png"/></Link>
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Nav>
-          <Navbar.Text>
-            <Link
-              activeClassName='active'
-              className="nav-item nav-link btn btn-link"
-              to="/make">Make</Link>
-          </Navbar.Text>
-          <Navbar.Text>
-            <Link
-              activeClassName='active'
-              className="nav-item nav-link btn btn-link"
-              to="/list">List</Link>
-          </Navbar.Text>
-          </Nav>
-          <Nav pullRight>
-          <Menu/>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-        <section className="container-fluid">
+        <Navbar>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <Link
+                style={{paddingTop: '18px'}}
+                to="/"><img alt="Codepix" src="/img/brand.png"/></Link>
+            </Navbar.Brand>
+          </Navbar.Header>
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Nav>
+              <Navbar.Text>
+                <Link
+                  activeClassName='active'
+                  className="nav-item nav-link btn btn-link"
+                  to="/make">Make</Link>
+              </Navbar.Text>
+              <Navbar.Text>
+                <Link
+                  activeClassName='active'
+                  className="nav-item nav-link btn btn-link"
+                  to="/list">List</Link>
+              </Navbar.Text>
+            </Nav>
+            <Menu/>
+          </Navbar.Collapse>
+        </Navbar>
+        <section className="container">
           {this.props.children}
         </section>
 

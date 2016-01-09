@@ -50,6 +50,15 @@ class AppStoreSpec {
   onLoginFail() {
     this.loginPending = false;
   }
+  onLogoutPending = () => (this.logoutPending = true);
+
+  onLogoutSuccess() {
+    this.user = null;
+    this.logoutPending = false;
+  }
+  onLogoutFail() {
+    this.logoutPending = false;
+  }
 
   onPushQueue(options) {
     this.queue.push(options);

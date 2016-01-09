@@ -5,11 +5,13 @@
  */
 
 
-@import "bootstrap/bootstrap";
-@import "highlight/github";
+@import "vendor/bootstrap";
+@import "vendor/highlight/github";
+@import "vendor/select/scss/mixins";
+@import "vendor/select/scss/default";
 @import "mixins/tipsy";
+
 @import "objects/icons";
 @import "objects/tooltips";
 @import "objects/minicard";
-@import "select/scss/mixins";
-@import "select/scss/default";
+

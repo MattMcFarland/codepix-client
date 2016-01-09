@@ -12,6 +12,10 @@ class AppActionsSpec {
       'loginSuccess',
       'loginFail',
 
+      'logoutPending',
+      'logoutSuccess',
+      'logoutFail',
+
       'showSignupModal',
       'hideSignupModal',
       'showLoginModal',
@@ -23,6 +27,34 @@ class AppActionsSpec {
     );
   }
 
+  logout() {
+    ajax.post('/api/logout')
+      .end((err, res) => {
+        if (!err) {
+          if (res && res.body) {
+            this.actions.pushQueue({
+              level: 'success',
+              title: 'Goodbye!',
+              message: 'You are now logged out!'
+            });
+            this.actions.shiftQueue();
+            this.actions.logoutFail();
+            this.actions.logoutSuccess(res.body.user);
+          } else {
+            this.actions.pushQueue({
+              level: 'error',
+              title: 'Oh snap!',
+              message: 'Something bad happened!'
+            });
+            this.actions.shiftQueue();
+            this.actions.logoutFail();
+          }
+        } else {
+          this.actions.logoutFail(err);
+        }
+      });
+    this.actions.logoutPending();
+  }
   login({username, password}) {
       ajax.post('/api/login')
         .send({
