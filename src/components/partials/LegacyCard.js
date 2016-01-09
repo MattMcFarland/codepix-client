@@ -1,5 +1,5 @@
 import React from 'react';
-import { PastaLink, Expander, Button, Icon } from './Elements';
+import { PastaLink, Expander, Icon } from './Elements';
 const hljs = require('highlight.js');
 
 function highlight(txt) {

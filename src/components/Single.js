@@ -88,7 +88,7 @@ export class Single extends React.Component {
               onImageTabClick={this.handleImageTabClick}
               onCodeTabClick={this.handleCodeTabClick}
               tab={this.state.tab}
-              {...this.state.card} />
+              {...this.state.legacy} />
           </div> :
           <p>Loading Data...</p>}
       </div>
