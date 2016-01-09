@@ -1,6 +1,6 @@
 import React from 'react';
 import ajax from 'superagent';
-import {CodeCard} from './partials';
+import {CodeCard, LegacyCard} from './partials';
 import { Button } from './partials/Elements';
 import { scrollTo } from '../utils';
 
@@ -40,8 +40,12 @@ export class Single extends React.Component {
     ajax.get('/api/code/' + this.props.params.id)
       .end((err, res) => {
         if (!err) {
-          this.setState({value: ''});
-          this.setState({card: res.body});
+          if (res.body.image) {
+            this.setState({legacy: res.body});
+          } else {
+            this.setState({value: ''});
+            this.setState({card: res.body});
+          }
         }
       });
   }
@@ -60,6 +64,25 @@ export class Single extends React.Component {
               &#8594; Share this
             </Button>
             <CodeCard
+              onShareExpandToggle={this.handleShareToggle}
+              isShareExpanded={this.state.isShareExpanded}
+              onImageTabClick={this.handleImageTabClick}
+              onCodeTabClick={this.handleCodeTabClick}
+              tab={this.state.tab}
+              {...this.state.card} />
+          </div> :
+          ''}
+        {this.state.legacy ?
+          <div>
+            <Button onClick={this.handleRestart}
+                    kind="link">
+              &#8594; Make Another
+            </Button>
+            <Button onClick={this.handleShare}
+                    kind="link">
+              &#8594; Share this
+            </Button>
+            <LegacyCard
               onShareExpandToggle={this.handleShareToggle}
               isShareExpanded={this.state.isShareExpanded}
               onImageTabClick={this.handleImageTabClick}
