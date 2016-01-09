@@ -1,30 +1,150 @@
 import React from 'react';
 import { Link } from 'react-router';
+import {
+  Navbar,
+  Nav,
+  MenuItem,
+  Modal,
+  Button,
+  NavDropdown
+  } from 'react-bootstrap';
+import { SignupForm, LoginForm } from './';
+import { AppActions } from '../actions/AppActions';
+import { AppStore } from '../stores/AppStore';
+import NotificationSystem from 'react-notification-system';
+
+
 
 export class Layout extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      ...AppStore.getState()
+    };
+    this._notificationSystem = null;
+    this.onChange = this.onChange.bind(this);
+  }
+  componentDidMount() {
+    AppStore.listen(this.onChange);
+    this._notificationSystem = this.refs.notificationSystem;
+  }
+  componentWillUnmount() {
+    AppStore.unlisten(this.onChange);
+  }
+  addNotification = (queue) => {
+    let message = queue.slice(0, 1);
+    this._notificationSystem.addNotification(message[0]);
+  }
+  onChange(state) {
+    if (state.queue && state.queue.length) {
+      setTimeout(this.addNotification(state.queue), 100);
+    }
+    this.setState(state);
+  }
+
   render() {
+
+    var Menu;
+    let { showSignupModal, showLoginModal } = this.state;
+    let onShowSignupForm = () => (AppActions.showSignupModal());
+    let onShowLoginForm = () => (AppActions.showLoginModal());
+    let onHideSignupForm = () => (AppActions.hideSignupModal());
+    let onHideLoginForm = () => (AppActions.hideLoginModal());
+    if (this.state.user) {
+      Menu = ({}) => (
+        <NavDropdown eventKey={3} title="User" id="user-dropdown">
+          <MenuItem eventKey={3.1}>Dashboard</MenuItem>
+          <MenuItem eventKey={3.2}>Notifications</MenuItem>
+          <MenuItem divider />
+          <MenuItem eventKey={3.3}>Logout</MenuItem>
+        </NavDropdown>
+      );
+
+
+    } else {
+      Menu = ({}) => (
+        <Nav>
+          <Button bsStyle='link' onClick={onShowSignupForm}>Signup</Button>
+          <Button bsStyle='link' onClick={onShowLoginForm}>Login</Button>
+        </Nav>
+      );
+    }
+
     return (
-      <div>
-        <nav className="container-fluid navbar navbar-light bg-faded">
-          <div className="nav navbar-nav">
+      <section>
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
             <Link
-              style={{paddingTop: '6px'}}
-              className="navbar-brand"
+              style={{paddingTop: '18px'}}
               to="/"><img alt="Codepix" src="/img/brand.png"/></Link>
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Nav>
+          <Navbar.Text>
             <Link
               activeClassName='active'
-              className="nav-item nav-link"
+              className="nav-item nav-link btn btn-link"
               to="/make">Make</Link>
+          </Navbar.Text>
+          <Navbar.Text>
             <Link
               activeClassName='active'
-              className="nav-item nav-link"
+              className="nav-item nav-link btn btn-link"
               to="/list">List</Link>
-          </div>
-        </nav>
+          </Navbar.Text>
+          </Nav>
+          <Nav pullRight>
+          <Menu/>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
         <section className="container-fluid">
           {this.props.children}
         </section>
-      </div>
+
+        {showSignupModal ?
+          <Modal
+            show={showSignupModal}
+            onHide={onHideSignupForm}>
+            <Modal.Header closeButton>
+              <Modal.Title>Signup</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <SignupForm history={this.props.history}/>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={onHideSignupForm}>
+                Cancel
+              </Button>
+            </Modal.Footer>
+          </Modal>
+          : ''}
+
+        {showLoginModal ?
+          <Modal
+            show={showLoginModal}
+            onHide={onHideLoginForm}>
+            <Modal.Header closeButton>
+              <Modal.Title>Login</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <LoginForm history={this.props.history}/>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={onHideLoginForm}>
+                Cancel
+              </Button>
+            </Modal.Footer>
+          </Modal>
+          : ''}
+
+
+        <NotificationSystem ref="notificationSystem" />
+      </section>
     );
   }
 }

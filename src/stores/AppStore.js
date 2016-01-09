@@ -5,7 +5,8 @@ import { AppActions } from '../actions/AppActions';
 class AppStoreSpec {
   constructor() {
     this.bindActions(AppActions);
-    this.user = JSON.parse(document.getElementById('user'));
+    var userEl = document.getElementById('user');
+    this.user = userEl ? JSON.parse(userEl.innerHTML) : null;
     this.showSignupModal = false;
     this.showLoginModal = false;
     this.signupPending = false;
@@ -30,42 +31,28 @@ class AppStoreSpec {
 
   onSignupPending = () => (this.signupPending = true);
 
-  onSignupSuccess(res) {
-    this.user = res.body;
+  onSignupSuccess(user) {
+    this.user = user;
     this.signupPending = false;
     this.showSignupModal = false;
   }
   onSignupFail() {
-    this.error = {
-      message: 'error'
-    };
     this.signupPending = false;
   }
 
   onLoginPending = () => (this.loginPending = true);
 
-  onLoginSuccess(res) {
-    this.user = res.body;
+  onLoginSuccess(user) {
+    this.user = user;
     this.loginPending = false;
     this.showLoginModal = false;
   }
   onLoginFail() {
-    this.error = {
-      message: 'error'
-    };
     this.loginPending = false;
   }
 
-  onAddToast(options) {
-    return new Promise(resolve, reject) {
-      try {
-        resolve(this.queue.push(options));
-      }
-      catch (er) {
-        reject(er);
-      }
-    }
-
+  onPushQueue(options) {
+    this.queue.push(options);
   }
 
   onShiftQueue() {
