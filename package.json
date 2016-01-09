@@ -1,6 +1,6 @@
 {
   "name": "codepix-client",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "it bundles for the app",
   "scripts": {
     "prepublish": "npm test && npm run build",
@@ -48,6 +48,7 @@
     "gulp-uglify": "^1.5.1",
     "gulp-util": "^3.0.7",
     "lodash": "^3.10.1",
+    "babel-relay-plugin": "^0.6.3",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -55,7 +56,6 @@
   "license": "MIT",
   "dependencies": {
     "alt": "0.17.9",
-    "babel-relay-plugin": "^0.6.3",
     "classnames": "^2.2.1",
     "highlight.js": "^9.0.0",
     "history": "^1.17.0",

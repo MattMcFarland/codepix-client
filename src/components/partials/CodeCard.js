@@ -17,6 +17,7 @@ export const CodeCard = ({
   imageUrl,
   shareUrl,
   dateCreated,
+  image,
   isShareExpanded,
   onShareExpandToggle,
   onImageTabClick,
@@ -24,7 +25,6 @@ export const CodeCard = ({
   tab = 'image'
   }) => (
   <div id={'codecard-' + shasum} className='card'>
-
     <header className='card-block'>
         <ul className="nav nav-tabs">
           <li className={'nav-link' + (tab === 'image' ? ' active' : '')}>
@@ -45,7 +45,9 @@ export const CodeCard = ({
     </header>
     <div style={{paddingTop: '0'}} className='card-block'>
       <div style={{display: tab === 'image' ? 'block' : 'none'}}>
-      <img className='card-img-top' src={'/c0dez/data/' + shasum + '.png'} />
+        {image ?
+          <img className="card-img-top" src={'/' + image} /> :
+      <img className='card-img-top' src={'/c0dez/data/' + shasum + '.png'} />}
       </div>
       <div style={{display: tab === 'code' ? 'block' : 'none'}}>
       <div className='card-text'>
